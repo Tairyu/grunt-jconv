@@ -5,12 +5,12 @@
     "fast.js": {
       "version": "0.0.3",
       "from": "fast.js@0.0.3",
-      "resolved": "http://localhost:4873/fast.js/-/fast.js-0.0.3.tgz"
+      "resolved": "https://registry.npmjs.org/fast.js/-/fast.js-0.0.3.tgz"
     },
     "fs-extra": {
       "version": "0.10.0",
       "from": "fs-extra@0.10.0",
-      "resolved": "http://localhost:4873/fs-extra/-/fs-extra-0.10.0.tgz",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-0.10.0.tgz",
       "dependencies": {
         "ncp": {
           "version": "0.5.1",
@@ -44,7 +44,7 @@
     "grunt": {
       "version": "0.4.5",
       "from": "grunt@0.4.5",
-      "resolved": "http://localhost:4873/grunt/-/grunt-0.4.5.tgz",
+      "resolved": "https://registry.npmjs.org/grunt/-/grunt-0.4.5.tgz",
       "dependencies": {
         "async": {
           "version": "0.1.22",
@@ -64,7 +64,7 @@
         "dateformat": {
           "version": "1.0.2-1.2.3",
           "from": "dateformat@1.0.2-1.2.3",
-          "resolved": "http://localhost:4873/dateformat/-/dateformat-1.0.2-1.2.3.tgz"
+          "resolved": "https://registry.npmjs.org/dateformat/-/dateformat-1.0.2-1.2.3.tgz"
         },
         "eventemitter2": {
           "version": "0.4.14",
@@ -254,7 +254,7 @@
     "grunt-contrib-clean": {
       "version": "0.6.0",
       "from": "grunt-contrib-clean@0.6.0",
-      "resolved": "http://localhost:4873/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz",
+      "resolved": "https://registry.npmjs.org/grunt-contrib-clean/-/grunt-contrib-clean-0.6.0.tgz",
       "dependencies": {
         "rimraf": {
           "version": "2.2.8",
@@ -266,17 +266,17 @@
     "jconv": {
       "version": "0.1.5",
       "from": "jconv@0.1.5",
-      "resolved": "http://localhost:4873/jconv/-/jconv-0.1.5.tgz"
+      "resolved": "https://registry.npmjs.org/jconv/-/jconv-0.1.5.tgz"
     },
     "jit-grunt": {
       "version": "0.7.0",
       "from": "jit-grunt@0.7.0",
-      "resolved": "http://localhost:4873/jit-grunt/-/jit-grunt-0.7.0.tgz"
+      "resolved": "https://registry.npmjs.org/jit-grunt/-/jit-grunt-0.7.0.tgz"
     },
     "time-grunt": {
       "version": "0.4.0",
       "from": "time-grunt@0.4.0",
-      "resolved": "http://localhost:4873/time-grunt/-/time-grunt-0.4.0.tgz",
+      "resolved": "https://registry.npmjs.org/time-grunt/-/time-grunt-0.4.0.tgz",
       "dependencies": {
         "chalk": {
           "version": "0.5.1",
@@ -336,7 +336,7 @@
         },
         "hooker": {
           "version": "0.2.3",
-          "from": "hooker@^0.2.3",
+          "from": "hooker@~0.2.3",
           "resolved": "https://registry.npmjs.org/hooker/-/hooker-0.2.3.tgz"
         },
         "pretty-ms": {
