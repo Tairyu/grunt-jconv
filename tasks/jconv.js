@@ -8,8 +8,13 @@ var fast = require('fast.js');
 var curDest = function(dest, srcPath){
   if(!dest) return srcPath;
 
-  fs.mkdirpSync(dest);
-  return path.join(dest, path.basename(srcPath));
+  if(path.extname(dest) === ''){
+    fs.mkdirpSync(dest);
+    return path.join(dest, path.basename(srcPath));
+  }
+  else {
+    return dest;
+  }
 };
 
 module.exports = function(grunt) {

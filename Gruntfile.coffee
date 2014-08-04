@@ -15,8 +15,10 @@ module.exports = (grunt) ->
       src:
         options:
           fromEncode: 'SJIS'
-        src: ['samples/src/*.txt', 'sample/src/nothing.js']
-        dest: 'dist/src1'
+        src: ['*.txt', 'nothing.js']
+        expand: true
+        cwd: 'samples/src'
+        dest: 'dist'
       src2:
         options:
           toEncode: 'SJIS'
