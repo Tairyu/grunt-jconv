@@ -1,11 +1,40 @@
 'use strict';
 
+var path = require('path');
+var fs = require('fs-extra');
+var jconv = require('jconv');
+var fast = require('fast.js');
+
+var curDest = function(dest, srcPath){
+  if(!dest) return srcPath;
+
+  fs.mkdirpSync(dest);
+  return path.join(dest, path.basename(srcPath));
+};
+
 module.exports = function(grunt) {
 
-  grunt.registerMultiTask('jconv', '', function() {
-    var jconv = require('jconv');
-    var config = grunt.config('jconv_sjis');
-    var buf = grunt.file.read(config.dist.src);
-    grunt.file.write(config.dist.dest, jconv(buf, 'UTF8', 'SHIFT_JIS'));
+  grunt.registerMultiTask('jconv', 'Convert files with jconv.', function() {
+
+    var options = this.options({fromEncode: 'UTF8', toEncode: 'UTF8'});
+
+    fast.forEach(this.files, function(file){
+
+      fast
+        .filter(file.src, function(srcPath){
+          if(!grunt.file.exists(srcPath)) {
+            grunt.log.warn('src file "' + srcPath + '" not found.');
+
+            return false;
+          }
+
+          return true;
+        })
+        .map(function(srcPath){
+          grunt.file.write(
+            curDest(file.dest, srcPath),
+            jconv(fs.readFileSync(srcPath), options.fromEncode, options.toEncode));
+      });
+    });
   });
 };
