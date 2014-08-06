@@ -35,7 +35,10 @@ module.exports = function (grunt) {
 
         grunt.file.write(
         curDest(file.dest, srcPath),
-        jconv(grunt.file.read(srcPath, {encoding: null}), options.fromEncode, options.toEncode));
+        jconv(grunt.file.read(srcPath, {
+          encoding: null
+        }),
+        options.fromEncode, options.toEncode));
 
         return true;
       });
