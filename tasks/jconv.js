@@ -1,32 +1,31 @@
 'use strict';
 
 var path = require('path');
-var fs = require('fs-extra');
+var fs = require('fs');
 var jconv = require('jconv');
-var fast = require('fast.js');
-
-var curDest = function(dest, srcPath){
-  if(!dest) return srcPath;
-
-  if(path.extname(dest) === ''){
-    fs.mkdirpSync(dest);
-    return path.join(dest, path.basename(srcPath));
-  }
-  else {
-    return dest;
-  }
-};
 
 module.exports = function(grunt) {
+
+  var curDest = function(dest, srcPath){
+    if(!dest) return srcPath;
+
+    if(path.extname(dest) === ''){
+      grunt.file.mkdir(dest);
+      return path.join(dest, path.basename(srcPath));
+    }
+    else {
+      return dest;
+    }
+  };
 
   grunt.registerMultiTask('jconv', 'Convert files with jconv.', function() {
 
     var options = this.options({fromEncode: 'UTF8', toEncode: 'UTF8'});
 
-    fast.forEach(this.files, function(file){
+    this.files.forEach(function(file){
 
-      fast
-        .filter(file.src, function(srcPath){
+      file.src
+        .filter(function(srcPath){
           if(!grunt.file.exists(srcPath)) {
             grunt.log.warn('src file "' + srcPath + '" not found.');
 
