@@ -1,7 +1,6 @@
 'use strict';
 
 var path = require('path');
-var fs = require('fs');
 var jconv = require('jconv');
 
 module.exports = function (grunt) {
@@ -33,9 +32,10 @@ module.exports = function (grunt) {
 
           return false;
         }
+
         grunt.file.write(
-          curDest(file.dest, srcPath),
-          jconv(fs.readFileSync(srcPath), options.fromEncode, options.toEncode));
+        curDest(file.dest, srcPath),
+        jconv(grunt.file.read(srcPath, {encoding: null}), options.fromEncode, options.toEncode));
 
         return true;
       });
