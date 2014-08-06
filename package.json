@@ -10,7 +10,7 @@
     "grunt-contrib-clean": "0.6.0",
     "grunt-contrib-jshint": "0.10.0",
     "grunt-jscs-checker": "0.6.2",
-    "grunt-shell": "^0.7.0",
+    "grunt-shell": "0.7.0",
     "husky": "0.6.0",
     "jit-grunt": "0.7.0",
     "jsfmt": "0.3.2",
