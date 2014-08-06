@@ -33,13 +33,11 @@ module.exports = function (grunt) {
 
           return false;
         }
+        grunt.file.write(
+          curDest(file.dest, srcPath),
+          jconv(fs.readFileSync(srcPath), options.fromEncode, options.toEncode));
 
         return true;
-      })
-      .map(function (srcPath) {
-        grunt.file.write(
-        curDest(file.dest, srcPath),
-        jconv(fs.readFileSync(srcPath), options.fromEncode, options.toEncode));
       });
     });
   });
