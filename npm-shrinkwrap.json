@@ -382,10 +382,10 @@
         }
       }
     },
-    "grunt-jscs-checker": {
+    "grunt-jscs": {
       "version": "0.6.2",
-      "from": "grunt-jscs-checker@*",
-      "resolved": "https://registry.npmjs.org/grunt-jscs-checker/-/grunt-jscs-checker-0.6.2.tgz",
+      "from": "grunt-jscs@*",
+      "resolved": "https://registry.npmjs.org/grunt-jscs/-/grunt-jscs-0.6.2.tgz",
       "dependencies": {
         "hooker": {
           "version": "0.2.3",

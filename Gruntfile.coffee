@@ -55,4 +55,5 @@ module.exports = (grunt) ->
 
   grunt.loadTasks 'tasks'
   grunt.registerTask 'default', ['jconv']
-  grunt.registerTask 'lint', ['shell:jsfmt', 'jshint', 'jscs', 'shell:afterAdd']
+  grunt.registerTask 'lint', ['jshint', 'jscs']
+  grunt.registerTask 'pre-git', ['shell:jsfmt', 'lint', 'shell:afterAdd']
