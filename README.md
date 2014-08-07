@@ -1,4 +1,4 @@
-# asg-grunt-jconv
+# grunt-jconv
 
 ## jconv task
 

@@ -1,5 +1,5 @@
 {
-  "name": "asg-grunt-jconv",
+  "name": "grunt-jconv",
   "private": true,
   "version": "0.1.0",
   "dependencies": {
