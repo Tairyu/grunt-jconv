@@ -26,21 +26,18 @@ module.exports = function (grunt) {
     this.files.forEach(function (file) {
 
       file.src
-      .filter(function (srcPath) {
+      .forEach(function (srcPath) {
         if (!grunt.file.exists(srcPath)) {
           grunt.log.warn('src file "' + srcPath + '" not found.');
 
-          return false;
+        } else {
+          grunt.file.write(
+          curDest(file.dest, srcPath),
+          jconv(grunt.file.read(srcPath, {
+            encoding: null
+          }),
+          options.fromEncode, options.toEncode));
         }
-
-        grunt.file.write(
-        curDest(file.dest, srcPath),
-        jconv(grunt.file.read(srcPath, {
-          encoding: null
-        }),
-        options.fromEncode, options.toEncode));
-
-        return true;
       });
     });
   });

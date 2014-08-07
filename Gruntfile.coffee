@@ -38,6 +38,8 @@ module.exports = (grunt) ->
     shell:
       jsfmt:
         command: 'jsfmt -w tasks/*.js'
+      afterAdd:
+        command: 'git add tasks/*.js'
 
     jscs:
       options:
@@ -53,4 +55,4 @@ module.exports = (grunt) ->
 
   grunt.loadTasks 'tasks'
   grunt.registerTask 'default', ['jconv']
-  grunt.registerTask 'lint', ['shell:jsfmt', 'jshint', 'jscs']
+  grunt.registerTask 'lint', ['shell:jsfmt', 'jshint', 'jscs', 'shell:afterAdd']
