@@ -19,5 +19,7 @@
   "scripts": {
     "precommit": "grunt pre-git",
     "prepush": "grunt lint"
-  }
+  },
+  "readmeFilename": "README.md",
+  "license": "MIT"
 }
